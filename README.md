@@ -1,1 +1,1 @@
-https://www.frontendmentor.io/ challenge
+frontendmentor.io challenge
