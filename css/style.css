@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  outline: none;
+}
+
+body {
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+
+section {
+  background: white;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  border-radius: 1rem;
+  width: 50rem;
+  margin: 6.7% auto;
+  padding: 3rem 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  background-image: url("../img/bg-pattern-desktop.svg");
+  background-size: cover;
+  top: -40%;
+  left: -55%;
+  bottom: 0;
+  width: 100%;
+}
+
+section .logo {
+  flex-grow: 1;
+  flex-wrap: nowrap;
+}
+
+.img1 {
+  position: relative;
+  left: -5rem;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+
+.card__box {
+  position: absolute;
+  left:  9.5rem;
+  top: 17rem;
+  z-index: 20;
+}
+
+.card__item {
+  position: relative;
+  line-height: 2rem;
+  cursor: pointer;
+  border-bottom: 1px hsl(240, 5%, 91%) solid;
+  padding: 0.75rem 0;
+  transition: all ease-out 0.2s;
+}
+
+.card__item::after {
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  bottom: 0;
+  width: 0.75rem;
+  content: "";
+  display: block;
+  background-image: url('../img/icon-arrow-down.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.card__summary::-webkit-details-marker {
+  display: none;
+} 
+
+.card__summary:hover {
+  color: hsl(14, 88%, 65%);
+  transition: all;
+}
+
+.card__item p {
+  font-size: 0.8rem;
+  color: #7e7e7e;
+}
+
+.card__item[open] summary ~ * {
+  animation: sweep ease-out 0.2s;
+}
+
+@keyframes sweep {
+  from {
+    opacity: 0;
+    margin-top: -1rem;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
